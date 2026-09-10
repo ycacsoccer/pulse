@@ -1,4 +1,4 @@
-const sheetId = "1anWPcNxxjs9bMjxgwey9P8FNm4_usHGr";
+const sheetId = "1KpxZeFlFUKIxTxB6_4_MgcdBAqi6He44aSW-0P4SPcM";
 const tabs = ["Players", "Matches", "Appearances", "Goals"];
 let language = new URLSearchParams(window.location.search).get("lang") === "ja" ? "ja" : "en";
 let dashboardData;
