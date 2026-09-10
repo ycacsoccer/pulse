@@ -10,7 +10,9 @@ const translations = {
 };
 
 function t(key) { return translations[language][key]; }
-function applyLanguage() { document.documentElement.lang = language; document.querySelectorAll("[data-i18n]").forEach((element) => { element.textContent = t(element.dataset.i18n); }); document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => { element.placeholder = t(element.dataset.i18nPlaceholder); }); const localeToggle = document.querySelector("#locale-toggle"); localeToggle.textContent = language === "en" ? "日本語" : "English"; localeToggle.href = language === "en" ? "?lang=ja" : "./"; localeToggle.lang = language === "en" ? "ja" : "en"; document.title = language === "en" ? "YC&AC Pulse | Official Team Website" : "YC&AC Pulse | 公式チームサイト"; }
+translations.en.squadPicker = "Squad Picker";
+translations.ja.squadPicker = "メンバー選出";
+function applyLanguage() { document.documentElement.lang = language; document.querySelectorAll("[data-i18n]").forEach((element) => { element.textContent = t(element.dataset.i18n); }); document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => { element.placeholder = t(element.dataset.i18nPlaceholder); }); document.querySelector("#squad-picker-link").href = language === "ja" ? "squad-picker.html?lang=ja" : "squad-picker.html"; const localeToggle = document.querySelector("#locale-toggle"); localeToggle.textContent = language === "en" ? "日本語" : "English"; localeToggle.href = language === "en" ? "?lang=ja" : "./"; localeToggle.lang = language === "en" ? "ja" : "en"; document.title = language === "en" ? "YC&AC Pulse | Official Team Website" : "YC&AC Pulse | 公式チームサイト"; }
 
 async function getSheet(tab) {
   const callback = `ycacSheet_${tab.replace(/\W/g, "_")}_${Date.now()}`;
